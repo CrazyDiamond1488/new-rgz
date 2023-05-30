@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НЕФАЗ</title>
+    <link rel="stylesheet" href="finans.css">
+    <style>
+    </style>
+    <script>
+        let AprelClosePrice = [348, 346, 383, 381, 375, 383, 378, 371,, 370, 377, 387, 385, 374, 375, 394, 405, 419, 404, 404, 400];
+        let AprelPrice = [370, 359, 435, 412, 399, 397, 389, 380, 376, 413, 394, 389, 387, 387, 394, 408, 440,433, 410, 423,
+                            315, 342, 335, 379, 370, 380, 370, 370, 362, 373, 378, 380, 366, 374, 373, 378, 380, 366, 374, 373, 382, 395, 399, 382, 399];
+        function ShowMax(AprelPrice){
+            let Max = Math.max.apply(null, AprelPrice);
+            let VivodMax = document.getElementById("ResultMax");
+            VivodMax.innerHTML = "Максимальное значение за апрель:" + Max + " Руб."
+        }
+        function ShowMin(AprelPrice){
+            let Min = Math.min.apply(null, AprelPrice);
+            let VivodMin = document.getElementById("ResultMin");
+            VivodMin.innerHTML = "Минимальное значение за апрель:" + Min + " Руб."
+        }
+        function ShowDisp (AprelClosePrice){
+            let sum = AprelClosePrice.map(i=>x+=i, x=0).reverse()[0]
+            let kolvozn = AprelClosePrice.length
+            let midl = sum/kolvozn
+            let zn = AprelClosePrice.map(i=>x+=(i-midl)**2, x=0).reverse()[0]
+            let sr_kv_2 = zn/kolvozn
+            let otkl = Math.sqrt(sr_kv_2)
+            let VivodDisp = document.getElementById("ResultDisp");
+            VivodDisp.innerHTML = "Среднеквадрат. за апрель:" + otkl + " Руб."
+        }
+        
+    </script>
+</head>
+<body>
+    <header>
+        <div class="up">
+            <div>
+                <a class="button" href="rgz.html">О компании</a>
+                <a class="button1" href="Finans.html">Основные финансовые показатели</a>
+                <a class="button" href="Kontact.html">Контактные данные</a>
+                <a class="button" href="Video.html">Видео</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="intro" id="Intro_1">
+            <div class="BOX">
+                </div>
+            </div>
+        </div>
+        <div class="intro_2" id="startIntro">
+            <div class="verh_2_intro">
+                <h2 class="Zagolovok">Основные финансовые показатели</h2>
+                    <h3 class="text_o_fin">
+                        Капитализация: 3,086 млрд ₽ (400 ₽ за акцию)<br>
+                        количество акций: 912 500 штук
+                    </h3>
+            </div>
+            <div class="button_math">
+                <div>
+                    <div class="bt_open" onclick="ShowMin(AprelPrice)">Минимальное значение</div>
+                    <div id="ResultMin"></div>
+
+                </div>
+                <div>
+                    <div class="bt_open" onclick="ShowMax(AprelPrice)">Максимальное значение</div>
+                    <div id="ResultMax"></div>
+                </div>
+                <div>
+                    <div class="bt_open" onclick="ShowDisp(AprelClosePrice)">Среднеквадр. отклонение</div>
+                    <div id="ResultDisp"></div>
+                </div>
+            </div>
+            <h2 class="Zagolovok">Таблица Max и Min значений за апрель</h2>
+            <table class="tabl" width="100%">
+                <tr>
+                    <th>Дата</th>
+                    <th>Максимум</th>
+                    <th>Минимум</th>
+                    <th>Цена закрытия</th>
+                </tr>
+                <tr>
+                    <td>03.04.2023</td>
+                    <td>370</td>
+                    <td>315</td>
+                    <td>348</td>
+                    
+                </tr>
+                <tr>
+                    <td>04.04.2023</td>
+                    <td>359</td>
+                    <td>342</td>
+                    <td>346</td>
+                    
+                </tr>
+                <tr>
+                    <td>05.04.2023</td>
+                    <td>435</td>
+                    <td>335</td>
+                    <td>383</td>
+                    
+                </tr>
+                <tr>
+                    <td>06.04.2023</td>
+                    <td>412</td>
+                    <td>379</td>
+                    <td>381</td>
+                    
+                </tr>
+                <tr>
+                    <td>07.04.2023</td>
+                    <td>399</td>
+                    <td>370</td>
+                    <td>375</td>
+                    
+                </tr>
+                <tr>
+                    <td>10.04.2023</td>
+                    <td>397</td>
+                    <td>380</td>
+                    <td>383</td>
+                    
+                </tr>
+                <tr>
+                    <td>11.04.2023</td>
+                    <td>389</td>
+                    <td>370</td>
+                    <td>378</td>
+                </tr>
+                <tr>
+                    <td>12.04.2023</td>
+                    <td>380</td>
+                    <td>370</td>
+                    <td>371</td>
+                </tr>
+                <tr>
+                    <td>13.04.2023</td>
+                    <td>376</td>
+                    <td>362</td>
+                    <td>370</td>
+                </tr>
+                <tr>
+                    <td>14.04.2023</td>
+                    <td>413</td>
+                    <td>373</td>
+                    <td>377</td>
+                </tr>
+                <tr>
+                    <td>17.04.2023</td>
+                    <td>394</td>
+                    <td>378</td>
+                    <td>387</td>
+                </tr>
+                <tr>
+                    <td>18.04.2023</td>
+                    <td>389</td>
+                    <td>380</td>
+                    <td>385</td>
+                </tr>
+                <tr>
+                    <td>19.04.2023</td>
+                    <td>387</td>
+                    <td>366</td>
+                    <td>374</td>
+                </tr>
+                <tr>
+                    <td>20.04.2023</td>
+                    <td>387</td>
+                    <td>374</td>
+                    <td>375</td>
+                </tr>
+                <tr>
+                    <td>21.04.2023</td>
+                    <td>394</td>
+                    <td>373</td>
+                    <td>394</td>
+                </tr>
+                <tr>
+                    <td>24.04.2023</td>
+                    <td>408</td>
+                    <td>382</td>
+                    <td>405</td>
+                </tr>
+                <tr>
+                    <td>25.04.2023</td>
+                    <td>440</td>
+                    <td>395</td>
+                    <td>419</td>
+                </tr>
+                <tr>
+                    <td>26.04.2023</td>
+                    <td>433</td>
+                    <td>399</td>
+                    <td>404</td>
+                </tr>
+                <tr>
+                    <td>27.04.2023</td>
+                    <td>410</td>
+                    <td>382</td>
+                    <td>404</td>
+                </tr>
+                <tr>
+                    <td>28.04.2023</td>
+                    <td>423</td>
+                    <td>399</td>
+                    <td>400</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <footer style="text-align: right; color: black;">
+        &copy;НЕФАЗ
+    </footer>
+</body>
+</html>
